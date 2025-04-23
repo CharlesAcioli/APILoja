@@ -3,7 +3,7 @@ require 'functions.php';
 $produtos = listarProdutos();
 ?>
 
-<h2>Usuários</h2>
+<h2>Cadastrar Produtos</h2>
 <a href="create.php">Adicionar Novo</a>
 <table border="1" cellpadding="5">
     <tr>
