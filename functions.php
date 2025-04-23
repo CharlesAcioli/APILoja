@@ -15,25 +15,25 @@ function listarProdutos() {
 
 function cadastrarProduto($nome, $descricao, $quantidade, $valor) {
     global $pdo;
-    $stmt = $pdo->prepare("INSERT INTO produtos (nome, descrição, quantidade, valor) VALUES (?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, quantidade, valor) VALUES (?, ?, ?, ?)");
     $stmt->execute([$nome, $descricao, $quantidade, $valor]);
 }
 
 function buscarProduto($id) {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT * FROM produtos WHERE nome = Blusa");
+    $stmt = $pdo->prepare("SELECT * FROM produtos WHERE ID_produto = ?");
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function atualizarProduto($id, $nome, $descricao) {
+function atualizarProduto($id, $nome, $descricao, $quantidade, $valor) {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE produtos SET name = ?, nome = ? WHERE id = ?");
-    $stmt->execute([$nome, $descricao, $id]);
+    $stmt = $pdo->prepare("UPDATE produtos SET nome = ?, descricao = ?, quantidade = ?, valor = ? WHERE ID_produto = ?");
+    $stmt->execute([$nome, $descricao, $quantidade, $valor, $id]);
 }
 
 function deletarProduto($id) {
     global $pdo;
-    $stmt = $pdo->prepare("DELETE FROM produtos WHERE id = ?");
+    $stmt = $pdo->prepare("DELETE FROM produtos WHERE ID_produto = ?");
     $stmt->execute([$id]);
 }

@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE IF NOT EXISTS `produtos` (
   `ID_produto` int unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `descrição` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `descricao` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `quantidade` int DEFAULT '0',
   `valor` int DEFAULT '0',
   `created_at` datetime DEFAULT NULL,
